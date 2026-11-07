@@ -1,9 +1,18 @@
-# UniformTypeIdentifiers.framework only ships with macOS 11 (Big Sur) and later.
-# MangoDisk-low still targets 10.13, and `mangodisk-platform` (via
-# objc2-uniform-type-identifiers) links it. Weak-linking lets dyld tolerate the
-# framework being absent at launch instead of aborting with "Library missing".
-[target.x86_64-apple-darwin]
-rustflags = ["-C", "link-arg=-Wl,-weak_framework,UniformTypeIdentifiers"]
+# MangoDisk-low targets macOS 10.13 (High Sierra). The build host (e.g. a
+# 2019 Intel MacBook Pro on macOS 15) defaults its deployment target to the host
+# SDK minimum (10.15 / 11+). If left unset, the linker strong-links frameworks
+# that do not exist on 10.13 and dyld aborts at launch with "Library missing"
+# (this was the root cause of the 1.2.2 crash on the 2013 iMac).
+#
+# Pinning MACOSX_DEPLOYMENT_TARGET=10.13 makes the linker (ld64) auto-weak-link
+# every framework newer than 10.13 (UniformTypeIdentifiers 11.0,
+# UserNotifications 10.14). We also list those two explicitly with
+# -weak_framework so the intent is unambiguous regardless of linker version.
+[env]
+MACOSX_DEPLOYMENT_TARGET = { value = "10.13", force = true }
 
-[target.aarch64-apple-darwin]
-rustflags = ["-C", "link-arg=-Wl,-weak_framework,UniformTypeIdentifiers"]
+[target.x86_64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-Wl,-weak_framework,UniformTypeIdentifiers",
+  "-C", "link-arg=-Wl,-weak_framework,UserNotifications",
+]
