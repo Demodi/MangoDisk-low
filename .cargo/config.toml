@@ -1,0 +1,9 @@
+# UniformTypeIdentifiers.framework only ships with macOS 11 (Big Sur) and later.
+# MangoDisk-low still targets 10.13, and `mangodisk-platform` (via
+# objc2-uniform-type-identifiers) links it. Weak-linking lets dyld tolerate the
+# framework being absent at launch instead of aborting with "Library missing".
+[target.x86_64-apple-darwin]
+rustflags = ["-C", "link-arg=-Wl,-weak_framework,UniformTypeIdentifiers"]
+
+[target.aarch64-apple-darwin]
+rustflags = ["-C", "link-arg=-Wl,-weak_framework,UniformTypeIdentifiers"]

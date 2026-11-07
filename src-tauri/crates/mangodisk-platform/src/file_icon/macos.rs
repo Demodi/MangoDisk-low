@@ -7,7 +7,7 @@ use std::{
 
 use objc2::{
     rc::{autoreleasepool, Retained},
-    runtime::AnyObject,
+    runtime::{AnyObject, Class},
     AnyThread, Message,
 };
 use objc2_app_kit::{
@@ -118,6 +118,15 @@ fn load_png_in_pool(query: &IconQuery) -> Result<Vec<u8>, &'static str> {
 }
 
 fn content_type(query: &IconQuery) -> Option<Retained<UTType>> {
+    // UniformTypeIdentifiers.framework was introduced in macOS 11. The binary
+    // weak-links it (see .cargo/config.toml), so on 10.13-10.15 the UTType class
+    // is absent and its symbols resolve to NULL. Bail out before touching any
+    // UTType* symbol so the caller falls back to a generic icon instead of
+    // dereferencing a NULL extern.
+    if Class::get(c"UTType").is_none() {
+        return None;
+    }
+
     let IconQuery::Type { key, extension } = query else {
         return None;
     };
