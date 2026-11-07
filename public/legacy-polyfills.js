@@ -198,4 +198,128 @@
   }
 
   definePolyfill(globalScope, 'structuredClone', deepClone);
+
+  // --- Host-object API shims (Safari 11 / WebKit 13605) ---
+  // reka-ui and other modern UI libraries depend on ResizeObserver
+  // (Safari 13.1) and IntersectionObserver (Safari 12.1) to lay out and
+  // position components, and on the Web Animations API (Safari 13.1) for
+  // transitions. None exist on 10.13, so components throw while mounting and
+  // the window renders blank. These guarded shims let the app render; on
+  // newer macOS the native APIs are present and these are skipped entirely.
+
+  function emitResize(observer, target) {
+    if (typeof observer._callback !== 'function') { return; }
+    var rect = (target && target.getBoundingClientRect)
+      ? target.getBoundingClientRect()
+      : { width: 0, height: 0, top: 0, left: 0, right: 0, bottom: 0, x: 0, y: 0 };
+    var entry = {
+      target: target,
+      contentRect: rect,
+      borderBoxSize: [{ inlineSize: rect.width, blockSize: rect.height }],
+      contentBoxSize: [{ inlineSize: rect.width, blockSize: rect.height }],
+      devicePixelContentBoxSize: [{ inlineSize: rect.width, blockSize: rect.height }]
+    };
+    observer._callback([entry], observer);
+  }
+
+  if (typeof globalScope.ResizeObserver === 'undefined') {
+    function LegacyResizeObserver(callback) {
+      this._callback = callback;
+      this._targets = [];
+    }
+    LegacyResizeObserver.prototype.observe = function (target) {
+      if (this._targets.indexOf(target) !== -1) { return; }
+      this._targets.push(target);
+      emitResize(this, target);
+    };
+    LegacyResizeObserver.prototype.unobserve = function (target) {
+      var idx = this._targets.indexOf(target);
+      if (idx !== -1) { this._targets.splice(idx, 1); }
+    };
+    LegacyResizeObserver.prototype.disconnect = function () {
+      this._targets = [];
+    };
+    globalScope.ResizeObserver = LegacyResizeObserver;
+  }
+
+  if (typeof globalScope.IntersectionObserver === 'undefined') {
+    function LegacyIntersectionObserver(callback) {
+      this._callback = callback;
+    }
+    LegacyIntersectionObserver.prototype.observe = function (target) {
+      if (typeof this._callback !== 'function') { return; }
+      var rect = (target && target.getBoundingClientRect)
+        ? target.getBoundingClientRect()
+        : { width: 0, height: 0, top: 0, left: 0, right: 0, bottom: 0 };
+      var entry = {
+        target: target,
+        isIntersecting: true,
+        intersectionRatio: 1,
+        boundingClientRect: rect,
+        intersectionRect: rect,
+        rootBounds: null,
+        time: 0
+      };
+      this._callback([entry], this);
+    };
+    LegacyIntersectionObserver.prototype.unobserve = function () {};
+    LegacyIntersectionObserver.prototype.disconnect = function () {};
+    LegacyIntersectionObserver.prototype.takeRecords = function () { return []; };
+    globalScope.IntersectionObserver = LegacyIntersectionObserver;
+  }
+
+  if (typeof globalScope.Element !== 'undefined'
+      && typeof globalScope.Element.prototype.animate !== 'function') {
+    globalScope.Element.prototype.animate = function () {
+      return {
+        cancel: function () {},
+        finish: function () {},
+        play: function () {},
+        pause: function () {},
+        reverse: function () {},
+        onfinish: null,
+        oncancel: null,
+        finished: Promise.resolve(),
+        ready: Promise.resolve(),
+        currentTime: 0,
+        playState: 'finished',
+        effect: null,
+        timeline: null
+      };
+    };
+  }
+
+  if (typeof Promise.allSettled !== 'function') {
+    Promise.allSettled = function (iterable) {
+      return Promise.all(Array.prototype.map.call(iterable, function (value) {
+        return Promise.resolve(value).then(
+          function (v) { return { status: 'fulfilled', value: v }; },
+          function (e) { return { status: 'rejected', reason: e }; }
+        );
+      }));
+    };
+  }
+
+  if (typeof Promise.any !== 'function') {
+    Promise.any = function (iterable) {
+      return new Promise(function (resolve, reject) {
+        var values = Array.prototype.slice.call(iterable);
+        var errors = [];
+        var remaining = values.length;
+        if (remaining === 0) {
+          reject(new Error('All promises were rejected'));
+          return;
+        }
+        values.forEach(function (value, index) {
+          Promise.resolve(value).then(resolve, function (error) {
+            errors[index] = error;
+            remaining -= 1;
+            if (remaining === 0) {
+              reject(new Error('All promises were rejected'));
+            }
+          });
+        });
+      });
+    };
+  }
 })();
