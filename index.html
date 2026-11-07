@@ -151,6 +151,43 @@
       </div>
     </div>
     <script src="/legacy-polyfills.js"></script>
+    <script>
+      // Diagnostic overlay: surfaces any JS error (incl. module parse/SyntaxError)
+      // on screen so a blank window can be diagnosed without devtools.
+      (function () {
+        function ensure() {
+          var el = document.getElementById('fatal-error');
+          if (!el) {
+            el = document.createElement('div');
+            el.id = 'fatal-error';
+            el.style.cssText =
+              'position:fixed;left:0;top:0;right:0;z-index:2147483647;max-height:100%;' +
+              'overflow:auto;background:#1a1010;color:#ff7b7b;' +
+              'font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;' +
+              'word-break:break-word;padding:14px 16px;box-shadow:0 2px 12px rgba(0,0,0,.5)';
+            (document.body || document.documentElement).appendChild(el);
+          }
+          return el;
+        }
+        function push(msg) {
+          var el = ensure();
+          el.textContent = (el.textContent ? el.textContent + '\n\n' : '') + msg;
+        }
+        window.addEventListener('error', function (e) {
+          if (e && e.message) {
+            push('[error] ' + e.message + (e.filename ? ' @ ' + e.filename + ':' + e.lineno + ':' + e.colno : ''));
+          } else if (e && e.error) {
+            push('[error] ' + ((e.error && (e.error.stack || e.error.message)) || e.error));
+          } else {
+            push('[error] ' + (e && e.type || 'unknown'));
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function (e) {
+          var r = e && e.reason;
+          push('[unhandledrejection] ' + ((r && (r.stack || r.message)) || r || '(no reason)'));
+        });
+      })();
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
