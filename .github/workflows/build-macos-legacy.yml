@@ -53,15 +53,43 @@ jobs:
       # --no-sign 跳过 codesign，产物未签名，安装时右键打开即可。
       # beforeBuildCommand 收窄为 pnpm build:frontend，只跑前端类型检查 + vite build
       # + 产物体积预算校验，跳过 vitest / cargo test，以缩短首次出包时间。
-      - name: Build macOS bundle (x86_64 — 2013 iMac)
+      # 只让 tauri 产出 .app。DMG 依赖 hdiutil / diskimages-helper，在 GitHub
+      # 托管 runner 上偶发失败（run #8 即如此：.app 已生成，bundle_dmg.sh 超时失败，
+      # 导致整个 job 判失败、artifact 上传被跳过）。因此把 DMG 拆成独立的
+      # best-effort 步骤，不再让它决定 .app 能否交付。
+      - name: Build macOS .app (x86_64 — 2013 iMac)
         env:
           TAURI_CONFIG_OVERRIDE: '{"bundle":{"createUpdaterArtifacts":false},"build":{"beforeBuildCommand":"pnpm build:frontend"}}'
-        run: pnpm tauri build --target x86_64-apple-darwin --bundles app,dmg --no-sign --config "$TAURI_CONFIG_OVERRIDE"
+        run: pnpm tauri build --target x86_64-apple-darwin --bundles app --no-sign --config "$TAURI_CONFIG_OVERRIDE"
+
+      # DMG 只是安装便利，失败不影响主产物。失败时 runner 上残留的
+      # diskimages-helper 可能占住挂载点，重试前先 detach 一次。
+      - name: Package DMG (best effort)
+        continue-on-error: true
+        run: |
+          set -u
+          APP_DIR="target/x86_64-apple-darwin/release/bundle/macos"
+          DMG_DIR="target/x86_64-apple-darwin/release/bundle/dmg"
+          mkdir -p "$DMG_DIR"
+          for i in 1 2 3; do
+            hdiutil detach /Volumes/MangoDisk -force >/dev/null 2>&1 || true
+            if hdiutil create -volname "MangoDisk" -srcfolder "$APP_DIR" \
+                -ov -format UDZO "$DMG_DIR/MangoDisk_1.2.2_x64.dmg"; then
+              echo "DMG created on attempt $i"
+              exit 0
+            fi
+            echo "hdiutil attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::warning::DMG packaging failed; .app artifact is still valid"
+          exit 1
 
       - name: Upload DMG / .app
         uses: actions/upload-artifact@v4
         with:
           name: mangodisk-macos-x86_64
           # cargo workspace 根在仓库根目录，产物落在 ./target，而不是 ./src-tauri/target
-          path: target/x86_64-apple-darwin/release/bundle/macos/
+          path: |
+            target/x86_64-apple-darwin/release/bundle/macos/
+            target/x86_64-apple-darwin/release/bundle/dmg/
           if-no-files-found: error
