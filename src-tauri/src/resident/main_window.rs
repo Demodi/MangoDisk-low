@@ -103,7 +103,12 @@ pub fn open(
         // working input after it was created hidden. Linux background launches
         // do not create the main window, so showing this foreground window
         // immediately avoids that platform defect without a login flash.
-        let initially_visible = cfg!(target_os = "linux");
+        // A hidden WKWebView on macOS can be throttled before its JS executes;
+        // the frontend then never calls resident_main_ready, so take_destination()
+        // keeps returning None, reveal() never fires, and the window stays
+        // invisible forever (a hidden-window handshake deadlock). Show the
+        // foreground window immediately on macOS, matching the Linux workaround.
+        let initially_visible = cfg!(target_os = "linux") || cfg!(target_os = "macos");
         let window = WebviewWindowBuilder::from_config(app, config)?
             .visible(initially_visible)
             .focused(initially_visible)

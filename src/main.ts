@@ -16,13 +16,20 @@ app.use(pinia);
 app.use(i18n);
 
 async function startApplication() {
-  await Promise.all([
-    useAppStore(pinia).loadSettings(),
-    useAiStore(pinia).loadPreferences(),
-    useAnalysisStore(pinia).initializeViewPreferences(),
-    useAnalysisStore(pinia).initializeScanMode(),
-    useAnalysisExportPreferencesStore(pinia).initialize(),
-  ]);
+  // A single rejected store initializer must not prevent mounting: an unmounted
+  // main window never calls resident_main_ready, which leaves the window hidden
+  // forever on macOS. Always mount; individual stores degrade independently.
+  try {
+    await Promise.all([
+      useAppStore(pinia).loadSettings(),
+      useAiStore(pinia).loadPreferences(),
+      useAnalysisStore(pinia).initializeViewPreferences(),
+      useAnalysisStore(pinia).initializeScanMode(),
+      useAnalysisExportPreferencesStore(pinia).initialize(),
+    ]);
+  } catch (error) {
+    console.error('[startup] store initialization failed', error);
+  }
   app.mount('#app');
 }
 

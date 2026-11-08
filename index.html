@@ -186,6 +186,27 @@
           var r = e && e.reason;
           push('[unhandledrejection] ' + ((r && (r.stack || r.message)) || r || '(no reason)'));
         });
+
+        // Fallback handshake: if the module bundle never mounts (parse error,
+        // missing host API, ...), complete resident_main_ready anyway so Rust
+        // can reveal this window and the diagnostic text above is readable.
+        // Rust's ready() is idempotent, so a duplicate call is harmless.
+        var handshakeDone = false;
+        function fallbackHandshake() {
+          if (handshakeDone) return;
+          handshakeDone = true;
+          try {
+            var internals = window.__TAURI_INTERNALS__;
+            if (internals && typeof internals.invoke === 'function') {
+              internals.invoke('resident_main_ready', {});
+            }
+          } catch (e) {
+            /* ignore: the overlay still shows the error */
+          }
+        }
+        window.addEventListener('error', fallbackHandshake, true);
+        window.addEventListener('unhandledrejection', fallbackHandshake);
+        setTimeout(fallbackHandshake, 8000);
       })();
     </script>
     <script type="module" src="/src/main.ts"></script>
