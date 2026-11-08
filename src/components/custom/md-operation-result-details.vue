@@ -45,8 +45,6 @@ defineProps<{
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .operation-result-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

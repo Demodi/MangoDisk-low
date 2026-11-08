@@ -14,8 +14,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-table-row {
   position: relative;
   padding-inline: var(--result-table-content-inline-padding, 14px);

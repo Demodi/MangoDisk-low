@@ -86,8 +86,6 @@ defineEmits<{ cancel: [] }>();
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .operation-dialog-icon {
   display: grid;
   width: 40px;

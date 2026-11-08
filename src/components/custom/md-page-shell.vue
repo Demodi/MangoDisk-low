@@ -76,7 +76,6 @@ const windowDragRegion = isMacOs || hasDesktopWindowControls ? '' : undefined;
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .md-page-shell {
   display: flex;
   width: 100%;

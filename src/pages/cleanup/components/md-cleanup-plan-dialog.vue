@@ -215,8 +215,6 @@ function preventOutsideDismiss(event: Event) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .plan-summary {
   display: flex;
   align-items: baseline;

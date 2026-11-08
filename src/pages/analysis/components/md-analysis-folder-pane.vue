@@ -392,8 +392,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .folder-pane {
   display: flex;
   min-width: 0;

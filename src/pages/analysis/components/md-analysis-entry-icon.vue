@@ -21,7 +21,6 @@ defineProps<{ entry: DirectoryEntryInfo; deleting: boolean; compact?: boolean }>
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .analysis-entry-icon {
   display: grid;
   width: 34px;

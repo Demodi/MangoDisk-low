@@ -206,8 +206,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .uninstall-execution-list {
   max-height: 230px;
   overflow-y: auto;

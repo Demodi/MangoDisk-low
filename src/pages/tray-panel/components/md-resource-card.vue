@@ -3,7 +3,6 @@
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .resource-card {
   @apply rounded-xl border border-border bg-card;
   box-sizing: border-box;

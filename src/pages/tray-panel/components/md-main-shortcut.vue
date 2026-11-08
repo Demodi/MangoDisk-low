@@ -58,7 +58,6 @@ async function openMain() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .open-main-shortcut {
   @apply text-muted-foreground;
   position: relative;

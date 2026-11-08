@@ -399,7 +399,6 @@ function displayedUninstallApplicationBytes(application: ApplicationUninstallApp
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .detail-overview {
   padding: 0 24px;
 }

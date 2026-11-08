@@ -95,7 +95,6 @@ function label(sector: SunburstSector) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .sunburst-chart {
   display: block;
   width: 100%;

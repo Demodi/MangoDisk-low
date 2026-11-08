@@ -428,8 +428,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .time-range {
   width: 170px;
   @apply border-border/70 bg-card/35 shadow-none hover:border-border hover:bg-card/55;

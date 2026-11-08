@@ -1,5 +1,3 @@
-@reference "@assets/main.css";
-
 /* Presets own the complete surface palette, independent of the application theme. */
 :where(.floating-monitor, .floating-background-swatch)[data-background='darkGray'] {
   --floating-surface: #26282c;
@@ -49,6 +47,8 @@
 .floating-monitor {
   position: relative;
   color: var(--floating-foreground, var(--foreground));
+  /* Safari 15.6 drops color-mix(); the solid surface below is the fallback. */
+  background: var(--floating-surface, var(--background));
   background: color-mix(
     in srgb,
     var(--floating-surface, var(--background)) var(--floating-background-opacity),
@@ -95,6 +95,7 @@
   content: '';
   position: absolute;
   pointer-events: none;
+  border-color: var(--floating-foreground, var(--foreground));
   border-color: color-mix(in srgb, var(--floating-foreground, var(--foreground)) 22%, transparent);
 }
 .floating-monitor[data-dividers='true']:not(.vertical) .metric.column-divider::before {
@@ -112,6 +113,7 @@
   border-top-style: dashed;
 }
 .floating-monitor[data-interactive='true'] .metric:hover {
+  background: transparent;
   background: color-mix(in srgb, currentColor 8%, transparent);
 }
 .floating-monitor .empty-cell {

@@ -165,8 +165,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .detail-dialog-body {
   display: flex;
   min-height: 0;

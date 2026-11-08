@@ -109,8 +109,6 @@ function close() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .window-titlebar {
   position: fixed;
   z-index: 30;

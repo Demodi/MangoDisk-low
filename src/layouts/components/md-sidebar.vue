@@ -177,7 +177,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .sidebar {
   display: flex;
   width: var(--sidebar-width, 256px);

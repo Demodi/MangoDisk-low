@@ -124,8 +124,6 @@ function updateOpen(open: boolean) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .destructive-dialog-icon {
   display: grid;
   width: 40px;

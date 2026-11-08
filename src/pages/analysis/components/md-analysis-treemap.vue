@@ -469,8 +469,6 @@ function tooltipStyle() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .treemap-workspace {
   display: flex;
   min-width: 0;

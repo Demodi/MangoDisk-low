@@ -398,8 +398,6 @@ function updateTheme(value: unknown) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .update-title {
   display: inline-flex;
   align-items: center;

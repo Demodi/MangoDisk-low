@@ -133,8 +133,6 @@ function toggle(id: number, checked: boolean) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .selection-toggle {
   grid-column: 3;
   grid-row: 1;

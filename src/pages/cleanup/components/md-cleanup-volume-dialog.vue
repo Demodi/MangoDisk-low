@@ -163,8 +163,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .volume-list {
   container-type: inline-size;
   min-height: 0;

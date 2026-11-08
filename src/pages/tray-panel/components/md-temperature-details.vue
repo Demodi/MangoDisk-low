@@ -23,7 +23,6 @@ defineProps<{ history: TrendPoint[]; observedAtMs: number; active: boolean; labe
   </MdResourceCard>
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .temperature-details {
   height: 90px;
   display: flex;

@@ -101,7 +101,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .integration-error {
   @apply text-destructive-text;
   padding: 0 20px 16px;

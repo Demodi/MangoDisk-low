@@ -212,7 +212,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .export-body {
   display: grid;
   gap: 20px;

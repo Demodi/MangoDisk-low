@@ -40,7 +40,6 @@ const { t } = useI18n({ useScope: 'global' });
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .segmented-choice {
   @apply bg-muted rounded-lg;
   display: flex;

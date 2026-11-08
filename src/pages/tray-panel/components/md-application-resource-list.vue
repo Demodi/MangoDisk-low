@@ -227,7 +227,6 @@ function measure(element: Element | ComponentPublicInstance | null) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .application-resources {
   display: flex;
   flex-direction: column;

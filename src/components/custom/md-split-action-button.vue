@@ -114,8 +114,6 @@ const hasMenu = computed(() => props.items.length > 0);
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-split-action {
   display: inline-flex;
   flex: none;
@@ -144,7 +142,7 @@ const hasMenu = computed(() => props.items.length > 0);
 }
 
 .md-split-action--default .md-split-action__menu {
-  border-left: 1px solid color-mix(in srgb, var(--primary-foreground) 24%, transparent);
+  border-left: 1px solid oklch(var(--primary-foreground-ch) / 0.24);
 }
 
 .md-split-action__primary:hover,

@@ -214,7 +214,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .other-parent {
   display: -webkit-box;
   overflow: hidden;

@@ -206,8 +206,6 @@ onMounted(scrollBreadcrumbsToEnd);
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .browser-toolbar {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
@@ -352,8 +350,6 @@ onMounted(scrollBreadcrumbsToEnd);
 </style>
 
 <style>
-@reference "@assets/main.css";
-
 /* Reka's portaled content does not inherit the toolbar's scoped style attribute. */
 .md-analysis-sibling-menu {
   z-index: 50;

@@ -439,7 +439,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .optimization-page :deep(.md-page-content) {
   gap: 0;
 }
@@ -471,7 +470,7 @@ watch(
   color: var(--primary-text);
 }
 .change-summary:focus-visible {
-  outline: 2px solid color-mix(in oklab, var(--ring) 35%, transparent);
+  outline: 2px solid oklch(var(--ring-ch) / 0.35);
   outline-offset: 2px;
 }
 .change-summary:disabled {

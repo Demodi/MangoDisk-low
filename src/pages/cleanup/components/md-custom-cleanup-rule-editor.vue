@@ -323,8 +323,6 @@ function modifiedDays(rule: CustomCleanupRule): string {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .field small {
   @apply text-muted-foreground;
   font-size: var(--font-content-secondary);

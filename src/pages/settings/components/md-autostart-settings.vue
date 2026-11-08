@@ -67,7 +67,6 @@ onMounted(loadAutostart);
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .autostart-settings-error {
   @apply text-destructive-text;
   padding: 0 20px 16px;

@@ -97,7 +97,6 @@ const hint = computed(() =>
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .resource-temperature {
   min-width: 0;
 }

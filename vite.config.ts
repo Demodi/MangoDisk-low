@@ -1,5 +1,4 @@
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
-import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
@@ -82,7 +81,7 @@ export default defineConfig({
       // The app uses the Composition API and needs no global i18n components.
       fullInstall: false,
     }),
-    tailwindcss(),
+    // Tailwind v3 runs through postcss.config.js instead of a Vite plugin.
   ],
   resolve: {
     alias: {

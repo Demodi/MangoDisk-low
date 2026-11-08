@@ -32,8 +32,6 @@ defineProps<{
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .confirmation-item-list {
   @apply border border-border/70;
   border-radius: 9px;

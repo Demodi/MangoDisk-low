@@ -74,8 +74,6 @@ async function requestOpenSettings() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .permission-summary {
   display: flex;
   min-width: 0;

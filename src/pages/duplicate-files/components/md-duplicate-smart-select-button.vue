@@ -109,8 +109,6 @@ function selectRule(value: unknown) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .smart-select-split {
   display: inline-flex;
   height: 34px;

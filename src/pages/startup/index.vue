@@ -759,8 +759,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .startup-change-dialog {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;

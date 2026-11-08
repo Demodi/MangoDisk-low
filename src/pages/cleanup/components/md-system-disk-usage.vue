@@ -83,8 +83,6 @@ const accessibleDetails = computed(() =>
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .system-disk-usage {
   @apply border-border/70 bg-card/35 text-muted-foreground;
   display: grid;

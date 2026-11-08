@@ -131,7 +131,6 @@ function toggle(id: string, checked: boolean) {
   </div>
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .selection-toggle {
   @apply inline-flex h-8 min-w-0 cursor-pointer items-center justify-self-end gap-1.5 rounded px-2 text-content-body text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-default disabled:opacity-40;
   grid-column: 3;

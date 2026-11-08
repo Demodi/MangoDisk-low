@@ -238,7 +238,6 @@ onDeactivated(resetInteraction);
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .sunburst-workspace {
   display: flex;
   min-height: 0;

@@ -40,7 +40,6 @@ const pressureHint = computed(() => (pressureState.value ? t(PRESSURE_KEYS[press
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .memory-pressure {
   @apply text-muted-foreground;
   display: inline-flex;

@@ -697,7 +697,6 @@ defineExpose({
   />
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .reorder-hint {
   @apply text-muted-foreground;
   margin-inline-start: auto;

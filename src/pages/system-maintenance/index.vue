@@ -419,8 +419,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .maintenance-page :deep(.md-page-content) {
   gap: 0;
 }
@@ -484,6 +482,7 @@ watch(
   width: min(420px, 72%);
   height: 2px;
   border-radius: 999px;
+  background: var(--primary);
   background: color-mix(in oklab, var(--primary) 14%, transparent);
 }
 
@@ -533,6 +532,7 @@ watch(
 
 .item-execute-button {
   min-width: 72px;
+  border-color: var(--border);
   border-color: color-mix(in oklab, var(--primary) 28%, var(--border));
   color: var(--primary-text);
 }

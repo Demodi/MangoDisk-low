@@ -281,8 +281,6 @@ function downloadUpdate() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .about-dialog-header {
   display: flex;
   flex-direction: column;

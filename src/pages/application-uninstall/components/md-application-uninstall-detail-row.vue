@@ -28,8 +28,6 @@ defineProps<{
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .readonly-detail-row {
   display: grid;
   min-width: 0;

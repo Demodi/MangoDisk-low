@@ -62,7 +62,7 @@ function toggle() {
   height: 14px;
   border-radius: 999px;
   background: var(--switch-thumb);
-  box-shadow: 0 1px 2px color-mix(in oklab, var(--foreground) 18%, transparent);
+  box-shadow: 0 1px 2px oklch(var(--foreground-ch) / 0.18);
   transition: transform 140ms ease;
 }
 .md-switch-spinner {

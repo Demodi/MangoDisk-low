@@ -37,8 +37,6 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .selection-mode {
   display: flex;
   min-width: 0;

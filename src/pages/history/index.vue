@@ -174,8 +174,6 @@ function recordSummary(record: PresentedOperationRecord): string {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .clear-history-button {
   @apply border-0 bg-transparent text-muted-foreground shadow-none hover:text-destructive-text;
 }

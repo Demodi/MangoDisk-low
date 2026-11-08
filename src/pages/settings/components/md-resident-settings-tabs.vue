@@ -93,7 +93,6 @@ watch(
   </TabsRoot>
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .display-mode-header {
   flex: none;
   padding: 4px 20px;

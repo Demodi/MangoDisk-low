@@ -330,8 +330,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .custom-dialog {
   min-height: 0;
 }

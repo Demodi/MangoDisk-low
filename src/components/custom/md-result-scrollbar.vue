@@ -127,8 +127,6 @@ function keyDown(event: KeyboardEvent) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-scrollbar {
   position: absolute;
   inset-block: 0;

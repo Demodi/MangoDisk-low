@@ -12,7 +12,6 @@ defineProps<{ title?: string; plain?: boolean }>();
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .settings-section > h2 {
   margin: 1px 0 6px 2px;
   font-size: var(--font-content-body);

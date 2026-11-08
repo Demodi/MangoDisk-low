@@ -33,8 +33,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-inline-notice {
   display: flex;
   flex: none;

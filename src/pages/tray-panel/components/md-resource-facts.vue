@@ -51,7 +51,6 @@ withDefaults(
   </dl>
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .resource-facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(90px, 100%), 1fr));

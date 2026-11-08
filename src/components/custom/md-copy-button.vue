@@ -87,7 +87,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .copy-value {
   display: inline-flex;
   align-items: baseline;

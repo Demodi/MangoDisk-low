@@ -124,7 +124,6 @@ const facts = computed(() => {
   <MdResourceFacts :active="active" :facts="facts" class="cpu-details" :aria-label="t('cpuDetails.summary')" />
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .temperature-disabled-heading {
   display: flex;
   align-items: center;

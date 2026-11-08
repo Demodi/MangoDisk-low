@@ -48,8 +48,6 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-detail-header {
   @apply border-border;
   display: grid;

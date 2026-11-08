@@ -266,7 +266,6 @@ const rates = computed(() =>
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .resource-meta > .reading-error {
   @apply text-muted-foreground;
   font-size: 10px;
@@ -365,6 +364,7 @@ small {
   border-radius: 6px;
 }
 .resource-meta .cleanup-button:hover {
+  background: var(--primary);
   background: color-mix(in srgb, var(--primary) 88%, var(--primary-foreground));
 }
 .resource-meta .cleanup-link:focus-visible {

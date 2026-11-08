@@ -196,7 +196,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .privacy-operation-list {
   min-height: 0;
   max-height: 230px;

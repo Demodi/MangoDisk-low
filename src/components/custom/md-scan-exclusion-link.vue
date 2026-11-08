@@ -21,8 +21,6 @@ const { t } = useI18n({ useScope: 'global' });
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .exclusion-link {
   display: inline-flex;
   flex: none;

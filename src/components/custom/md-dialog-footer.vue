@@ -24,8 +24,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-dialog-footer {
   box-sizing: border-box;
   min-height: var(--layout-dialog-footer-height);

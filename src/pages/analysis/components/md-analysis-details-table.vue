@@ -272,8 +272,6 @@ function sortControlLabel(key: AnalysisSortKey, column: string) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .virtual-content,
 .virtual-window {
   position: relative;

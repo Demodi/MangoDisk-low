@@ -18,8 +18,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-master-detail {
   @apply border-border/70 bg-workspace;
   display: grid;

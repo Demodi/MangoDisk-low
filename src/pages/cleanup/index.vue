@@ -629,8 +629,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .scan-action {
   display: flex;
   align-items: center;

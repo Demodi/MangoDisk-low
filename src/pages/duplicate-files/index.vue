@@ -622,7 +622,6 @@ function confirmDelete() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .duplicate-page {
   height: 100%;
   min-height: 0;

@@ -44,8 +44,6 @@ function updateValue(event: Event) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-search {
   display: grid;
   min-width: 220px;

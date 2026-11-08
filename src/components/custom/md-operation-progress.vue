@@ -177,7 +177,6 @@ defineEmits<{ cancel: [] }>();
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .operation-progress-card {
   width: 100%;
   max-width: 610px;

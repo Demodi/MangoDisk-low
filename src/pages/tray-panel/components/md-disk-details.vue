@@ -210,7 +210,6 @@ const activities = computed(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .disk-health,
 .disk-activity {
   padding: 12px;

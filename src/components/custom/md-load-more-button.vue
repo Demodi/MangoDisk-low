@@ -25,8 +25,6 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .load-more-wrap {
   display: flex;
   min-height: 38px;

@@ -951,7 +951,6 @@ async function cancelDeepCleanup() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .app-shell {
   --titlebar-height: 0px;
   --window-controls-width: 144px;

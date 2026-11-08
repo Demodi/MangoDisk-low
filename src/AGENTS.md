@@ -48,11 +48,11 @@ Pages may present several domains together, but shared product orchestration mus
 - `assets/main.css` imports the shared tokens and both palettes, maps tokens to Tailwind, and owns global layout and interaction styles. Components consume semantic tokens instead of inspecting theme IDs.
 - Use `text-primary-text` and `text-destructive-text` for standalone labels and icons; `primary` and `destructive` are filled-control colors paired with their `*-foreground` tokens. The style-system check enforces this distinction.
 - Tailwind's `dark:` variant must follow the application `data-theme` attribute so manual brightness settings remain independent of the OS preference.
-- The project uses Tailwind CSS 4.3. Verify syntax against v4 documentation.
+- The project uses Tailwind CSS 3.4 so the app renders in the system WKWebView of macOS 10.15 (Safari 15.6.1). Verify syntax against v3 documentation. Do not reintroduce v4-only features (`@property`, `color-mix()`-based `/NN` utilities, `@theme`, `@utility`, `@custom-variant`, `@reference`, parenthesis arbitrary values such as `max-h-(--x)`).
 - Prefer responsive utilities and named container queries over page-specific viewport media queries. `shell:` is reserved for application-shell navigation.
 - Reusable components fill or shrink within their parent. Exact sizes are appropriate for stable control heights, icon boxes, hit targets, and intrinsic-ratio assets—not page layout widths.
 - Put cross-page scrollbar behavior in `assets/main.css`; use `scrollbar-hidden` or `scrollbar-stable` in components.
-- In scoped CSS, add `@reference "@assets/main.css"` before `@apply`.
+- Scoped CSS uses `@apply` directly: `postcss.config.js` runs the Tailwind v3 plugin over every style block, so no `@reference` directive is needed. Semantic colour utilities read `--<token>-ch` channels from the generated `assets/themes/alpha-channels.css`; run `pnpm generate:alpha-channels` after editing a palette.
 - Buttons and hover states must not translate, scale, or change layout dimensions. Use color, border, or shadow feedback that cannot cause page movement.
 - Keep page headers and content-height behavior consistent through project-owned shell components.
 - Use `MdSettingsGroup` and `MdSettingsRow` for settings-page groups and rows. These components own spacing, alignment, typography, responsive controls, and hover/focus feedback; callers own business state and actions.

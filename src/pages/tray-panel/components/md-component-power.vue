@@ -37,7 +37,6 @@ const label = computed(() => t(props.metric === 'cpu' ? 'systemStatus.cpuPower' 
   </MdTooltip>
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .component-power {
   @apply text-foreground;
   margin-left: auto;

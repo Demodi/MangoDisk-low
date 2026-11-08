@@ -10,8 +10,6 @@
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-table-hierarchy {
   display: flex;
   min-width: 0;

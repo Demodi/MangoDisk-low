@@ -359,7 +359,6 @@ async function reveal() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 li {
   margin: 0;
   padding: 2px 0;

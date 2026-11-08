@@ -18,8 +18,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-status-badge {
   display: inline-flex;
   flex: none;

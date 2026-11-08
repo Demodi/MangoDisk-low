@@ -72,8 +72,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .native-file-icon,
 .directory-fallback {
   display: grid;

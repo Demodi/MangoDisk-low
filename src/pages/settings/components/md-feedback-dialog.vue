@@ -602,8 +602,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .feedback-dialog {
   container-type: inline-size;
 }

@@ -366,7 +366,6 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-@reference "@assets/main.css";
 .gpu-details {
   display: flex;
   flex-direction: column;

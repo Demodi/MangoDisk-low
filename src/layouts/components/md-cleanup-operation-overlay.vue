@@ -336,7 +336,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .cleanup-execution-list {
   min-height: 0;
   max-height: 230px;

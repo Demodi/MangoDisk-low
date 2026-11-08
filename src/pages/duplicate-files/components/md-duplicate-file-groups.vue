@@ -545,8 +545,6 @@ function loadMoreGroups() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .duplicate-groups {
   min-height: 0;
   flex: 1;

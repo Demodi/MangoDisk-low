@@ -138,8 +138,6 @@ async function showComponents() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .license-header {
   flex: none;
   padding-inline-end: 60px;

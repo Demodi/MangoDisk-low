@@ -281,7 +281,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .release-settings {
   @apply bg-card text-card-foreground;
   display: flex;

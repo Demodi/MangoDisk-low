@@ -97,7 +97,6 @@ watch(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .floating-panel-anchor {
   position: absolute;
   top: 12px;

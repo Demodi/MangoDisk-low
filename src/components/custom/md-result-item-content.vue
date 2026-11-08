@@ -66,8 +66,6 @@ const emit = defineEmits<{ toggle: [] }>();
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-item-content {
   display: grid;
   min-width: 0;

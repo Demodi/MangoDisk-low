@@ -95,8 +95,6 @@ function openLink(event: MouseEvent) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-safe-rich-text {
   overflow-wrap: anywhere;
   @apply text-muted-foreground;

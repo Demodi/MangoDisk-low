@@ -79,8 +79,6 @@ function handleClick(event: MouseEvent) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .icon-action:not(.md-help-action) {
   cursor: pointer;
 }

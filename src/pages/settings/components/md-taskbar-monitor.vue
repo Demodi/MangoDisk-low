@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
         <SelectTrigger id="taskbar-monitor" class="min-w-0 flex-1">
           <SelectValue class="truncate">{{ selectedLabel }}</SelectValue>
         </SelectTrigger>
-        <SelectContent class="max-w-(--reka-select-content-available-width) [overflow-wrap:anywhere]">
+        <SelectContent class="max-w-[var(--reka-select-content-available-width)] [overflow-wrap:anywhere]">
           <SelectItem value="primary">{{ t('systemStatus.taskbarMonitorPrimary') }}</SelectItem>
           <SelectItem v-if="unavailable && value" :value="value" disabled>
             {{ t('systemStatus.taskbarMonitorDisconnected') }}
@@ -127,7 +127,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .monitor-controls {
   display: flex;
   align-items: center;

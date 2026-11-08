@@ -151,7 +151,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .display-feedback {
   padding: 10px 14px;
 }

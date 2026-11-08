@@ -330,8 +330,6 @@ function preventOutsideDismiss(event: Event) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 :global(.privacy-plan-dialog) {
   display: grid;
   min-height: 0;

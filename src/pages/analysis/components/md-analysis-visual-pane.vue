@@ -187,8 +187,6 @@ function updateDepth(value: unknown) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .visual-pane {
   container: analysis-visual / inline-size;
   display: flex;

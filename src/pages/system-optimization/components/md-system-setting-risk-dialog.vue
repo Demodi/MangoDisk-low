@@ -57,8 +57,6 @@ const { t } = useI18n({ useScope: 'global' });
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .risk-dialog-icon {
   display: grid;
   width: 40px;
@@ -66,6 +64,7 @@ const { t } = useI18n({ useScope: 'global' });
   place-items: center;
   border-radius: 10px;
   color: var(--warning-foreground);
+  background: var(--warning);
   background: color-mix(in oklab, var(--warning) 14%, transparent);
 }
 

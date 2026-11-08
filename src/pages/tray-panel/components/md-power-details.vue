@@ -316,7 +316,6 @@ const adapterFacts = computed(() => [
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .power-details {
   display: flex;
   flex-direction: column;

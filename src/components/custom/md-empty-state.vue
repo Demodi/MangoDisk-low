@@ -36,8 +36,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-empty-state {
   gap: 10px;
   padding: 24px 24px clamp(52px, 9vh, 88px);

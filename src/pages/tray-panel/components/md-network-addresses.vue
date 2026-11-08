@@ -127,7 +127,6 @@ onBeforeUnmount(() => void store.setActive(false));
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .network-addresses {
   @apply border-t border-border;
   padding: 4px 0 2px;

@@ -38,15 +38,13 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-catalog-list-item {
   display: grid;
   min-height: 66px;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
-  border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-bottom: 1px solid oklch(var(--border-ch) / 0.7);
   padding: 10px 18px;
 }
 
@@ -55,7 +53,7 @@ withDefaults(
 }
 
 .md-catalog-list-item:hover {
-  background: color-mix(in oklab, var(--muted) 28%, transparent);
+  background: oklch(var(--muted-ch) / 0.28);
 }
 
 .md-catalog-list-item-copy {

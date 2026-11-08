@@ -52,8 +52,6 @@ const iconSize = computed(() => (props.compact ? 22 : 24));
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 /* File formats share one geometry and differ only through semantic color. */
 .file-type-icon.pdf {
   @apply text-destructive-text;

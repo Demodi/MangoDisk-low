@@ -464,7 +464,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 :global(html.tray-panel-document),
 :global(html.tray-panel-document body),
 :global(html.tray-panel-document #app) {

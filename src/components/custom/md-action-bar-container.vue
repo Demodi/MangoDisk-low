@@ -5,8 +5,6 @@
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-action-bar-container {
   display: flex;
   width: 100%;

@@ -114,8 +114,6 @@ function handleIconError(iconPath?: string) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .application-close-panel {
   overflow: hidden;
   border-width: 1px;

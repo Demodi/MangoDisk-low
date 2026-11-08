@@ -287,7 +287,6 @@ function setHelpOpen(item: ScanExcludedName, open: boolean) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .name-editor {
   display: flex;
   min-height: 0;

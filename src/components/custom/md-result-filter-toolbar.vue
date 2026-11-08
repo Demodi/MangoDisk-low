@@ -10,8 +10,6 @@
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-filter-toolbar-main :slotted(*) {
   min-width: 0;
   flex: 1;

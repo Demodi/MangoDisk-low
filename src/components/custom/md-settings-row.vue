@@ -65,7 +65,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .setting-row {
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr) auto;

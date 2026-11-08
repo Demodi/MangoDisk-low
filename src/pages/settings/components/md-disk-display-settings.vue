@@ -171,7 +171,6 @@ function canReadDevice(device: ResourceDisk) {
 </template>
 
 <style scoped>
-@reference '@/assets/main.css';
 .disk-group {
   @apply mt-1;
 }

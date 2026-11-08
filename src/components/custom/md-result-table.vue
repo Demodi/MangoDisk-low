@@ -131,8 +131,6 @@ defineExpose({
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .result-table {
   --result-table-content-inline-padding: 12px;
   --result-table-hierarchy-indent: 32px;

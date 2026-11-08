@@ -563,7 +563,6 @@ watch(() => props.modelValue, closeTooltips);
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .scope-select {
   min-width: 0;
   @apply border-border/70 bg-card/35 shadow-none hover:border-border hover:bg-card/55;
@@ -628,6 +627,7 @@ watch(() => props.modelValue, closeTooltips);
 }
 .scope-protection-toggle.protected {
   color: var(--warning-foreground, var(--foreground));
+  background: var(--warning, var(--primary));
   background: color-mix(in oklab, var(--warning, var(--primary)) 12%, transparent);
 }
 .scope-protection-toggle[aria-disabled='true'] {

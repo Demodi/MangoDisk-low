@@ -1,0 +1,210 @@
+/*
+ * GENERATED FILE - do not edit by hand.
+ * Regenerate with: node scripts/generate-alpha-channels.mjs
+ *
+ * OKLCH channel twins for Tailwind v3 alpha utilities (`/NN`).
+ * Safari 15.6.1 supports oklch() (15.4+) but not color-mix() (16.2+)
+ * nor @property (16.4+); v3 emits `oklch(var(--x-ch) / 0.2)` instead.
+ * Channel values are derived from the theme files without sRGB conversion,
+ * so wide-gamut OKLCH colours keep their exact hue and chroma.
+ */
+
+/* mango.css */
+:root:not([data-color-theme]), :root[data-color-theme='mango'] {
+  --background-ch: 0.984 0.014 78;
+  --workspace-ch: 0.997 0.004 78;
+  --foreground-ch: 0.245 0.025 58;
+  --card-ch: 1 0 0;
+  --card-foreground-ch: 0.245 0.025 58;
+  --popover-ch: 1 0 0;
+  --popover-foreground-ch: 0.245 0.025 58;
+  --primary-ch: 0.58 0.165 52;
+  --primary-text-ch: 0.54 0.165 52;
+  --primary-text-subtle-ch: 0.54 0.165 52;
+  --primary-text-hover-ch: 0.54 0.165 52;
+  --primary-foreground-ch: 1 0 0;
+  --secondary-ch: 0.952 0.023 76;
+  --secondary-foreground-ch: 0.36 0.045 57;
+  --muted-ch: 0.96 0.012 78;
+  --muted-foreground-ch: 0.52 0.03 60;
+  --accent-ch: 0.94 0.045 70;
+  --accent-foreground-ch: 0.45 0.12 52;
+  --destructive-ch: 0.59 0.21 25;
+  --destructive-text-ch: 0.54 0.19 25;
+  --destructive-foreground-ch: 1 0 0;
+  --success-ch: 0.52 0.13 128;
+  --success-foreground-ch: 0.4 0.1 128;
+  --warning-ch: 0.58 0.13 72;
+  --usage-warning-ch: 0.5243 0.1375 50.5439;
+  --usage-critical-ch: 0.5273 0.1937 25.0695;
+  --warning-foreground-ch: 0.44 0.1 62;
+  --border-ch: 0.9 0.025 72;
+  --input-ch: 0.87 0.032 70;
+  --ring-ch: 0.62 0.17 52;
+  --sidebar-ch: 0.968 0.024 75;
+  --sidebar-foreground-ch: 0.3 0.03 58;
+  --sidebar-accent-ch: 0.925 0.06 67;
+  --sidebar-accent-foreground-ch: 0.43 0.13 52;
+  --sidebar-border-ch: 0.885 0.03 70;
+  --chart-1-ch: 0.7323 0.1825 54.1;
+  --chart-2-ch: 0.6504 0.1521 128.45;
+  --chart-3-ch: 0.64 0.12 205;
+  --chart-4-ch: 0.7 0.14 82;
+  --chart-5-ch: 0.62 0.15 330;
+  --file-code-ch: 0.7323 0.1825 54.1;
+  --file-audio-ch: 0.62 0.15 330;
+  --file-image-ch: 0.66 0.15 22;
+  --file-data-ch: 0.64 0.12 205;
+  --file-package-ch: 0.7 0.14 82;
+  --file-binary-ch: 0.52 0.03 60;
+}
+
+/* mango.css */
+:root:not([data-color-theme])[data-theme='dark'], :root[data-color-theme='mango'][data-theme='dark'] {
+  --background-ch: 0.235 0.008 70;
+  --workspace-ch: 0.26 0.008 70;
+  --foreground-ch: 0.94 0.01 78;
+  --card-ch: 0.3 0.012 70;
+  --card-foreground-ch: 0.94 0.01 78;
+  --popover-ch: 0.33 0.014 70;
+  --popover-foreground-ch: 0.94 0.01 78;
+  --primary-ch: 0.7323 0.1825 54.1;
+  --primary-text-ch: 0.82 0.13 65;
+  --primary-text-subtle-ch: 0.82 0.13 65;
+  --primary-text-hover-ch: 0.82 0.13 65;
+  --primary-foreground-ch: 0.233 0.023 57;
+  --secondary-ch: 0.355 0.018 70;
+  --secondary-foreground-ch: 0.92 0.01 78;
+  --muted-ch: 0.33 0.012 70;
+  --muted-foreground-ch: 0.78 0.018 75;
+  --accent-ch: 0.37 0.045 60;
+  --accent-foreground-ch: 0.87 0.09 70;
+  --destructive-ch: 0.55 0.2 25;
+  --destructive-text-ch: 0.8 0.13 25;
+  --destructive-foreground-ch: 0.985 0 0;
+  --success-ch: 0.78 0.13 140;
+  --success-foreground-ch: 0.82 0.1 140;
+  --warning-ch: 0.78 0.15 78;
+  --usage-warning-ch: 0.8431 0.1361 75.1707;
+  --usage-critical-ch: 0.72 0.1747 20.4368;
+  --warning-foreground-ch: 0.82 0.13 80;
+  --border-ch: 0.45 0.016 70;
+  --input-ch: 0.61 0.02 70;
+  --ring-ch: 0.74 0.175 54;
+  --sidebar-ch: 0.215 0.01 70;
+  --sidebar-foreground-ch: 0.89 0.014 75;
+  --sidebar-accent-ch: 0.36 0.055 60;
+  --sidebar-accent-foreground-ch: 0.88 0.09 70;
+  --sidebar-border-ch: 0.41 0.016 70;
+  --chart-1-ch: 0.74 0.18 54;
+  --chart-2-ch: 0.72 0.145 128;
+  --chart-3-ch: 0.7 0.12 205;
+  --chart-4-ch: 0.76 0.14 82;
+  --chart-5-ch: 0.7 0.14 330;
+  --file-code-ch: 0.74 0.18 54;
+  --file-audio-ch: 0.7 0.14 330;
+  --file-image-ch: 0.72 0.14 22;
+  --file-data-ch: 0.7 0.12 205;
+  --file-package-ch: 0.76 0.14 82;
+  --file-binary-ch: 0.78 0.018 75;
+}
+
+/* warm-gray.css */
+:root[data-color-theme='warm-gray'] {
+  --background-ch: 0.979 0.006 75;
+  --workspace-ch: 0.994 0.002 75;
+  --foreground-ch: 0.25 0.012 65;
+  --card-ch: 1 0 0;
+  --card-foreground-ch: 0.25 0.012 65;
+  --popover-ch: 1 0 0;
+  --popover-foreground-ch: 0.25 0.012 65;
+  --primary-ch: 0.55 0.16 52;
+  --primary-text-ch: 0.46 0.14 52;
+  --primary-text-subtle-ch: 0.46 0.14 52;
+  --primary-text-hover-ch: 0.46 0.14 52;
+  --primary-foreground-ch: 0.985 0.014 78;
+  --secondary-ch: 0.945 0.008 75;
+  --secondary-foreground-ch: 0.36 0.012 65;
+  --muted-ch: 0.953 0.006 75;
+  --muted-foreground-ch: 0.49 0.014 65;
+  --accent-ch: 0.952 0.03 65;
+  --accent-foreground-ch: 0.46 0.14 52;
+  --destructive-ch: 0.54 0.2 25;
+  --destructive-text-ch: 0.5 0.18 25;
+  --destructive-foreground-ch: 0.985 0 0;
+  --success-ch: 0.52 0.13 128;
+  --success-foreground-ch: 0.4 0.1 128;
+  --warning-ch: 0.58 0.13 72;
+  --usage-warning-ch: 0.5243 0.1375 50.5439;
+  --usage-critical-ch: 0.5273 0.1937 25.0695;
+  --warning-foreground-ch: 0.44 0.1 62;
+  --border-ch: 0.855 0.01 75;
+  --input-ch: 0.65 0.014 75;
+  --ring-ch: 0.62 0.17 52;
+  --sidebar-ch: 0.955 0.009 75;
+  --sidebar-foreground-ch: 0.3 0.012 65;
+  --sidebar-accent-ch: 0.925 0.035 65;
+  --sidebar-accent-foreground-ch: 0.46 0.14 52;
+  --sidebar-border-ch: 0.85 0.012 75;
+  --chart-1-ch: 0.7323 0.1825 54.1;
+  --chart-2-ch: 0.6504 0.1521 128.45;
+  --chart-3-ch: 0.64 0.12 205;
+  --chart-4-ch: 0.7 0.14 82;
+  --chart-5-ch: 0.62 0.15 330;
+  --file-code-ch: 0.7323 0.1825 54.1;
+  --file-audio-ch: 0.62 0.15 330;
+  --file-image-ch: 0.66 0.15 22;
+  --file-data-ch: 0.64 0.12 205;
+  --file-package-ch: 0.7 0.14 82;
+  --file-binary-ch: 0.49 0.014 65;
+}
+
+/* warm-gray.css */
+:root[data-color-theme='warm-gray'][data-theme='dark'] {
+  --background-ch: 0.225 0.005 75;
+  --workspace-ch: 0.25 0.005 75;
+  --foreground-ch: 0.94 0.006 75;
+  --card-ch: 0.29 0.006 75;
+  --card-foreground-ch: 0.94 0.006 75;
+  --popover-ch: 0.32 0.007 75;
+  --popover-foreground-ch: 0.94 0.006 75;
+  --primary-ch: 0.7323 0.1825 54.1;
+  --primary-text-ch: 0.7323 0.1825 54.1;
+  --primary-text-subtle-ch: 0.7323 0.1825 54.1;
+  --primary-text-hover-ch: 0.7323 0.1825 54.1;
+  --primary-foreground-ch: 0.233 0.023 57;
+  --secondary-ch: 0.335 0.008 75;
+  --secondary-foreground-ch: 0.92 0.006 75;
+  --muted-ch: 0.315 0.006 75;
+  --muted-foreground-ch: 0.75 0.009 75;
+  --accent-ch: 0.335 0.035 60;
+  --accent-foreground-ch: 0.85 0.095 65;
+  --destructive-ch: 0.55 0.2 25;
+  --destructive-text-ch: 0.78 0.14 25;
+  --destructive-foreground-ch: 0.985 0 0;
+  --success-ch: 0.72 0.145 128;
+  --success-foreground-ch: 0.78 0.12 128;
+  --warning-ch: 0.78 0.15 78;
+  --usage-warning-ch: 0.8431 0.1361 75.1707;
+  --usage-critical-ch: 0.72 0.1747 20.4368;
+  --warning-foreground-ch: 0.82 0.13 80;
+  --border-ch: 0.42 0.009 75;
+  --input-ch: 0.58 0.012 75;
+  --ring-ch: 0.74 0.175 54;
+  --sidebar-ch: 0.205 0.005 75;
+  --sidebar-foreground-ch: 0.87 0.008 75;
+  --sidebar-accent-ch: 0.335 0.035 60;
+  --sidebar-accent-foreground-ch: 0.86 0.1 65;
+  --sidebar-border-ch: 0.38 0.008 75;
+  --chart-1-ch: 0.74 0.18 54;
+  --chart-2-ch: 0.72 0.145 128;
+  --chart-3-ch: 0.7 0.12 205;
+  --chart-4-ch: 0.76 0.14 82;
+  --chart-5-ch: 0.7 0.14 330;
+  --file-code-ch: 0.74 0.18 54;
+  --file-audio-ch: 0.7 0.14 330;
+  --file-image-ch: 0.72 0.14 22;
+  --file-data-ch: 0.7 0.12 205;
+  --file-package-ch: 0.76 0.14 82;
+  --file-binary-ch: 0.75 0.009 75;
+}

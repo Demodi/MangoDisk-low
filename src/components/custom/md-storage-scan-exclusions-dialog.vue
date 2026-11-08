@@ -339,8 +339,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .exclusion-tabs {
   flex: none;
   display: flex;

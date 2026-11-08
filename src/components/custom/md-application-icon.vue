@@ -106,8 +106,6 @@ const resolvedArtworkSize = computed(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .md-application-icon {
   @apply text-primary-text;
   background: var(--surface-primary-subtle);

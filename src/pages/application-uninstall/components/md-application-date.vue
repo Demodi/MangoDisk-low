@@ -55,7 +55,6 @@ const hint = computed(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .application-date-value {
   display: inline-flex;
   min-width: 0;

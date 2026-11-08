@@ -163,8 +163,6 @@ function displayPath(path: string): string {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .scan-warning-trigger {
   display: inline-flex;
   min-width: 0;

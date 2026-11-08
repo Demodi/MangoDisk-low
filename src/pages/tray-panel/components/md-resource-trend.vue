@@ -201,7 +201,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .resource-trend {
   @apply border-b border-border;
   height: 24px;

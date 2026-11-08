@@ -25,8 +25,6 @@ withDefaults(
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .operation-workspace-stage {
   display: grid;
   min-height: 0;

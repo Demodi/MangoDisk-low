@@ -332,8 +332,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .large-file-list {
   --large-file-row-height: 44px;
   display: flex;

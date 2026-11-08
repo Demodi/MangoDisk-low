@@ -319,7 +319,6 @@ function suppressDraggedClick(event: MouseEvent) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 :global(html.floating-monitor-document),
 :global(html.floating-monitor-document body),
 :global(html.floating-monitor-document #app) {

@@ -195,7 +195,6 @@ const shortLabel = computed(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .memory-heading,
 .memory-footer {
   display: flex;
@@ -269,7 +268,7 @@ const shortLabel = computed(() => {
   width: 24px;
 }
 .release-supported .release-menu-button {
-  border-left: 1px solid color-mix(in srgb, var(--primary-foreground) 25%, transparent);
+  border-left: 1px solid oklch(var(--primary-foreground-ch) / 0.25);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -284,7 +283,7 @@ const shortLabel = computed(() => {
 }
 .release-button:hover:not(:disabled),
 .release-supported .release-menu-button:hover {
-  background: color-mix(in srgb, var(--primary-foreground) 12%, transparent);
+  background: oklch(var(--primary-foreground-ch) / 0.12);
 }
 .release-menu-button:hover {
   @apply bg-accent;
@@ -313,7 +312,6 @@ const shortLabel = computed(() => {
 </style>
 
 <style>
-@reference "@assets/main.css";
 /* Portal content does not inherit the overview component scope. */
 .md-memory-options {
   @apply rounded-lg border border-border bg-popover text-popover-foreground shadow-lg;

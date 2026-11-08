@@ -685,8 +685,6 @@ function navigateHistory(index: number) {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
-
 .recovery-status {
   display: flex;
   flex: none;

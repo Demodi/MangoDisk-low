@@ -378,7 +378,6 @@ const interfaceFacts = computed(() => {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .network-details {
   padding: 6px 0;
   display: flex;

@@ -481,7 +481,6 @@ function confirmDelete() {
 </template>
 
 <style scoped>
-@reference "@assets/main.css";
 .header-actions {
   display: flex;
   min-width: 0;
