@@ -5,14 +5,15 @@
 @import './themes/warm-gray.css';
 @import './themes/alpha-channels.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* UnoCSS (uno.config.ts) generates the utility + component layer and the
+ * base preflight at build time via the @unocss/vite plugin, so the Tailwind
+ * v3 @tailwind directives are removed here. @apply in component <style>
+ * blocks is expanded by transformerDirectives. */
 
 /*
  * Cross-page scrolling behavior is shared by feature components. These are
  * plain classes rather than v4 `@utility` rules so that no native CSS nesting
- * is needed and Tailwind v3's content purge cannot drop them.
+ * is needed and the content purge cannot drop them.
  */
 .scrollbar-hidden {
   scrollbar-width: none;
