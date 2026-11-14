@@ -3,9 +3,6 @@ import { createApp } from 'vue';
 
 import App from './App.vue';
 import './assets/main.css';
-// UnoCSS utility layer lives in a virtual module; without this import the
-// generated utilities never reach the bundle (only @apply expansions do).
-import 'virtual:uno.css';
 import 'vue-sonner/style.css';
 import { i18n } from './i18n';
 import { useAppStore } from './stores/app-store';

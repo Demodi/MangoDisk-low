@@ -1,12 +1,14 @@
 /**
  * Vite runs this PostCSS config for every CSS entry and every Vue SFC style
- * block. Under the UnoCSS backup engine the Tailwind v3 plugin is gone; only
- * autoprefixer remains so that `-webkit-backdrop-filter` (required by Safari
- * 15.6.1, which has no unprefixed `backdrop-filter`) is emitted alongside the
- * standard property. CSS `@import` resolution is left to Vite's own pipeline.
+ * block, which is what makes `@apply` work in scoped component styles under
+ * Tailwind v3 (no `@reference` directive is needed any more).
+ *
+ * CSS `@import` resolution is left to Vite's own CSS pipeline on purpose:
+ * adding postcss-import here would inline theme files twice.
  */
 export default {
   plugins: {
+    tailwindcss: {},
     autoprefixer: {},
   },
 };

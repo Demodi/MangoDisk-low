@@ -1,6 +1,5 @@
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import vue from '@vitejs/plugin-vue';
-import UnoCSS from '@unocss/vite';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 
@@ -82,9 +81,7 @@ export default defineConfig({
       // The app uses the Composition API and needs no global i18n components.
       fullInstall: false,
     }),
-    // UnoCSS backup engine (replaces the Tailwind v3 PostCSS pipeline).
-    // Utilities + @apply expansion + [data-theme] dark/light live here.
-    UnoCSS(),
+    // Tailwind v3 runs through postcss.config.js instead of a Vite plugin.
   ],
   resolve: {
     alias: {
